@@ -48,3 +48,9 @@ create fiori app with fiori element and list report template in with the help of
 reflect field with the help of ANNOTATIONS 
 write annotation with two type by manually and use guided development
 //////////////////////////////////////////////////
+
+V3
+date validation from backend
+date validition,rating ui
+
+when i upadte in backend so i need to update in frontend as well so we need to go in the manifest.json right click and choose service manager and update then it will update in the frontend as well and give the suggestion
