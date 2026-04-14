@@ -41,3 +41,10 @@ An SAP Fiori application.
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+//////////////////////////////////////////////////////////////////////
+
+Video 2
+create fiori app with fiori element and list report template in with the help of source name-connect to odata url=odata url
+reflect field with the help of ANNOTATIONS 
+write annotation with two type by manually and use guided development
+//////////////////////////////////////////////////
