@@ -54,3 +54,22 @@ date validation from backend
 date validition,rating ui
 
 when i upadte in backend so i need to update in frontend as well so we need to go in the manifest.json right click and choose service manager and update then it will update in the frontend as well and give the suggestion
+
+/////////////////////////////////////////////////////////////
+
+video -4
+HEADER INFO annotation ---- for title annotation
+Selection Fields ------ for filter annotation
+
+give meaning full name to every label so that end user will understand 
+ <!-- </Annotations>
+         <Annotations Target="ZF68FE_EMP_SRV.Employee/Desig">
+            <Annotation Term="Common.Label" String="{@i18n>desig}">  
+            </Annotation>
+        </Annotations> -->
+
+ ValueHelp annotation for create F4help dialogbox 
+
+ <!-- //only one line this valuelistwithfixedvalues will convert f4help to drop down -->
+            <!-- <Annotation Term="Common.ValueListWithFixedValues" Bool="true"/> -->
+            
