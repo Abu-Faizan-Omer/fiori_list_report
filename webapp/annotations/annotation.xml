@@ -119,6 +119,7 @@
                     <PropertyPath>Skill</PropertyPath>
                     <PropertyPath>Salary</PropertyPath>
                     <PropertyPath>Rating</PropertyPath>
+                   
                 </Collection>
             </Annotation>
         </Annotations>
