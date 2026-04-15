@@ -97,7 +97,7 @@ give meaning full name to every label so that end user will understand
           })]);
         },
  /// create custom action for table
-extendAPI - it is a predefine method which is already has some feature it hold all the selected rows 
+extensionAPI - it is a predefine method which is already has some feature it hold all the selected rows 
 // it send email message accordingly
 
 <!-- sendNoticeToEmp: function(oEvent) {
@@ -116,4 +116,121 @@ extendAPI - it is a predefine method which is already has some feature it hold a
         } -->
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+                                        Video 777777777777777
+
+for 2nd page title and description with the help of HeaderInfo annotation
+
+ <!-- // this is for 2nd page tittle and des -->
+                    <PropertyValue Property="Title">
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Name"/>
+                        </Record>
+                    </PropertyValue>
+                    <PropertyValue Property="Description">
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Empid"/>
+                        </Record>
+                    </PropertyValue>
+///////////////
+create headerfacets with the help of guide
+
+ <!-- //data point pointing to odata designation and show on headerfacets -->
+            <Annotation Term="UI.DataPoint" Qualifier="DPDesig">
+                <Record Type="UI.DataPointType">
+                    <PropertyValue Property="Title" String="Designation"/>
+                    <PropertyValue Property="Value" Path="Desig"/>
+                </Record>
+            </Annotation>
+
+     <!-- // this is data header facets which point to data element       -->
+            <Annotation Term="UI.HeaderFacets">
+                <Collection>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPDesig"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+
+/////
+now we are adding employee info so that we new annotaion field group acheive by guided
+it will add employee info and section part 
+ <!-- <Annotation Term="UI.FieldGroup" Qualifier="FGEmpBasicInfo">
+                <Record Type="UI.FieldGroupType">
+                    <PropertyValue Property="Data">
+                        <Collection>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Empid"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Name"/>
+                            </Record>
+                             <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Desig"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Doj"/>
+                            </Record>
+                             <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Email"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Skill"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Rating"/>
+                            </Record>
+                             <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Salary"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Status"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Statuscriticality"/>
+                            </Record>
+                        </Collection>
+                    </PropertyValue>
+                </Record>
+            </Annotation>
+            <Annotation Term="UI.Facets">
+                <Collection>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="Label" String="Employee Information"/>
+                        <PropertyValue Property="ID" String="idEmpInfo"/>
+                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGEmpBasicInfo"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+        </Annotations> -->
+//create sub group inside employee info
+ <!-- <Annotation Term="UI.Facets">   
+                <Collection>
+                <Record Type="UI.CollectionFacet">
+                <!-- //create sub group under Employee information help of Colledtion facets -->
+                <PropertyValue Property="Label" String="Employee Information"/>
+                    <PropertyValue Property="Facets">
+                        <Collection>
+                             <Record Type="UI.ReferenceFacet">
+                                <PropertyValue Property="Label" String="{@i18n>basicInfo}"/>
+                                <PropertyValue Property="ID" String="idEmpInfo"/>
+                                <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGEmpBasicInfo"/>
+                            </Record>
+                             <Record Type="UI.ReferenceFacet">
+                                <PropertyValue Property="Label" String="{@i18n>skillInfo}"/>
+                                <PropertyValue Property="ID" String="idEmpSkill"/>
+                                <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGEmpSkill"/>
+                            </Record>
+                             <Record Type="UI.ReferenceFacet">
+                                <PropertyValue Property="Label" String="{@i18n>performanceInfo}"/>
+                                <PropertyValue Property="ID" String="idEmpPerf"/>
+                                <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGEmpPerf"/>
+                            </Record>
+
+                        </Collection>
+                    </PropertyValue>
+                </Record>
+
+                   
+                </Collection>
+            </Annotation> -->
 
