@@ -48,6 +48,8 @@
          <Annotations Target="ZF68FE_EMP_SRV.Employee/Skill">
             <Annotation Term="Common.Label" String="{@i18n>skill}">  
             </Annotation>
+            <!-- ///////////// this is static default value  -->
+                <Annotation Term="Common.FilterDefaultValue" String="CAPM"/>     
         </Annotations>
          <Annotations Target="ZF68FE_EMP_SRV.Employee/Salary">
             <Annotation Term="Common.Label" String="{@i18n>salary}">  
@@ -77,6 +79,10 @@
                             <PropertyValue Property="Value" Path="Skill"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
                         </Record>
+                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Email"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Salary"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
@@ -91,10 +97,11 @@
                             <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPRating"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
-                         <Record Type="UI.DataField">
+                        
+                         <!-- <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path=""/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
-                        </Record>
+                        </Record> -->
                     </Collection>
                 </Annotation>
             <Annotation Term="UI.DataPoint" Qualifier="DPRating">

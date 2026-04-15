@@ -81,3 +81,39 @@ give meaning full name to every label so that end user will understand
  designation is mandatory to fill without that filling black filter will not work atleast select one filter which is designation
 
  //////////////////////////////////////
+
+ Video 6
+ how to set default value in filter static
+  <!-- <Annotation Term="Common.FilterDefaultValue" String="CAPM"/> -->
+
+  how to set default value dynamically
+ // THIS IS DYNAMICALLY DEFAULT VALUE
+        onAfterRendering:function(){
+              var oSmartFilterBar = this.byId("listReportFilter");
+          var oDesigFilter =  oSmartFilterBar.getAllFilterItems()[1].getControl();
+          oDesigFilter.setTokens([new sap.m.Token({
+            key:'HR',
+            text:"=HR"
+          })]);
+        },
+ /// create custom action for table
+extendAPI - it is a predefine method which is already has some feature it hold all the selected rows 
+// it send email message accordingly
+
+<!-- sendNoticeToEmp: function(oEvent) {
+            //MessageToast.show("Custom handler invoked.");
+            var extensionAPI = this.extensionAPI //it is predefine method it grabs all the selected rows
+            var aSelectContexts = extensionAPI.getSelectedContexts()
+            var aEmails = []
+            for(let i=0;i<aSelectContexts.length;i++){
+                aEmails.push(aSelectContexts[i].getProperty("Email"))
+            }
+            var toList = aEmails.toString()
+            var subject = "Warning notice on your Performance"
+            var body = "Hi, \n we have notice your performance is not up to the mark.If you dont prove yourself there could be a chance of termination. \n thanks"
+
+            sap.m.URLHelper.triggerEmail(toList,subject,body)
+        } -->
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+

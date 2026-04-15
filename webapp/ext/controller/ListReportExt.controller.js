@@ -6,6 +6,15 @@ sap.ui.define([
 ], function (Filter, SmartFilterBar, MultiComboBox,MessageBox) {
     "use strict";
     return {
+        // THIS IS DYNAMICALLY DEFAULT VALUE
+        onAfterRendering:function(){
+              var oSmartFilterBar = this.byId("listReportFilter");
+          var oDesigFilter =  oSmartFilterBar.getAllFilterItems()[1].getControl();
+          oDesigFilter.setTokens([new sap.m.Token({
+            key:'HR',
+            text:"=HR"
+          })]);
+        },
         getCustomAppStateDataExtension: function (oCustomData) {
             //the content of the custom field will be stored in the app state, so that it can be restored later, for example after a back navigation.
             //The developer has to ensure that the content of the field is stored in the object that is passed to this method.
@@ -38,11 +47,12 @@ sap.ui.define([
                 var oCustomControl = oSmartFilterBar.getControlByKey("Status");
 
                 var desigFilter = oSmartFilterBar.getControlByKey("Desig");
-                if(desigFilter.getTokens().length == 0){
-                     MessageBox.error("Please Select Designation filter its Mandatory")
-                    oBindingParams.preventTableBind = true
-                }
-                else{
+                // if(desigFilter.getTokens().length == 0){
+                //      MessageBox.error("Please Select Designation filter its Mandatory")
+                //     oBindingParams.preventTableBind = true
+                    
+                // }
+                //else{
                      if (oCustomControl instanceof MultiComboBox) {
                     var aStatus = oCustomControl.getSelectedKeys();
 
@@ -58,7 +68,7 @@ sap.ui.define([
                     oBindingParams.preventTableBind = true
                    }
 
-                }
+               // }
 
 
 
@@ -79,6 +89,20 @@ sap.ui.define([
                     // }
                 }
             }
+        },
+        sendNoticeToEmp: function(oEvent) {
+            //MessageToast.show("Custom handler invoked.");
+            var extensionAPI = this.extensionAPI //it is predefine method it grabs all the selected rows
+            var aSelectContexts = extensionAPI.getSelectedContexts()
+            var aEmails = []
+            for(let i=0;i<aSelectContexts.length;i++){
+                aEmails.push(aSelectContexts[i].getProperty("Email"))
+            }
+            var toList = aEmails.toString()
+            var subject = "Warning notice on your Performance"
+            var body = "Hi, \n we have notice your performance is not up to the mark.If you dont prove yourself there could be a chance of termination. \n thanks"
+
+            sap.m.URLHelper.triggerEmail(toList,subject,body)
         }
     };
 });
