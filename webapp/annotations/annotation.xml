@@ -252,11 +252,12 @@
                     </PropertyValue>
                 </Record>
             </Annotation>
+            
             <Annotation Term="UI.Facets">   
                 <Collection>
                 <Record Type="UI.CollectionFacet">
                 <!-- //create sub group under Employee information help of Colledtion facets -->
-                <PropertyValue Property="Label" String="Employee Information"/>
+                <PropertyValue Property="Label" String="{@i18n>employeeInformation}"/>
                     <PropertyValue Property="Facets">
                         <Collection>
                              <Record Type="UI.ReferenceFacet">
@@ -279,7 +280,36 @@
                     </PropertyValue>
                 </Record>
 
+                <!-- // second facets for project info  -->
+                <Record Type="UI.ReferenceFacet">
+                    <PropertyValue Property="Target" AnnotationPath="toProjects/@UI.LineItem#LIProjects"/>
+                    <PropertyValue Property="Label" String="{@i18n>projectsInformation}"/>
+                </Record>
+
                    
+                </Collection>
+            </Annotation>
+        </Annotations>
+
+<!-- // new annotation for project table -->
+        <Annotations Target="ZF68FE_EMP_SRV.Project">
+            <Annotation Term="UI.LineItem" Qualifier="LIProjects">
+                <Collection>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Empid"/>
+                    </Record>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Prjcode"/>
+                    </Record>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Clientname"/>
+                    </Record>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Prjname"/>
+                    </Record>
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Prjdesc"/>
+                    </Record>
                 </Collection>
             </Annotation>
         </Annotations>
