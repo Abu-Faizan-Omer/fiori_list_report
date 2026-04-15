@@ -239,3 +239,34 @@ it will add employee info and section part
                             Video 8888888888888888888888
   here we are adding new project info for that we are creating new annotation line item annnotaion for project details 
   line item ===means table creation                          
+  
+  add charts
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        Video 99999999999
+CRUD operation -we need to do only from backend from entity set (segw)
+--> add edit button  by guide and (choose configure mass edit via dialog)   
+
+--> how to go first page to second and second to third so need to write annotation in header Info annotation then it will redirect to third page
+
+when click on project then it will show the project data so we are add headerInfo anootation
+ <!-- <Annotations Target="ZF68FE_EMP_SRV.Project">
+        <Annotation Term="UI.HeaderInfo" >
+            <Record Type="UI.HeaderInfoType">
+                <PropertyValue Property="TypeName" String="Project"/>
+                <PropertyValue Property="TypeNamePlural" String="Projects"/>
+                <PropertyValue Property="Title">
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Empid"/>
+                    </Record>
+                </PropertyValue>
+                <PropertyValue Property="Description">
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Prjcode"/>
+                    </Record>
+                </PropertyValue>
+            </Record>
+        </Annotation> -->
+
+        

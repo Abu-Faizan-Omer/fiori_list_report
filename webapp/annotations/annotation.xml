@@ -125,6 +125,7 @@
                 </Record>
             </Annotation>
 
+<!-- // this is for filter heading -->
             <Annotation Term="UI.SelectionFields">
                 <Collection>
                     <PropertyPath>Empid</PropertyPath>
@@ -290,8 +291,95 @@
             </Annotation>
         </Annotations>
 
-<!-- // new annotation for project table -->
+<!-- // new annotation for project table     /////////////////////////////////////////////////////////////////////-->
         <Annotations Target="ZF68FE_EMP_SRV.Project">
+        <Annotation Term="UI.HeaderInfo" >
+            <Record Type="UI.HeaderInfoType">
+                <PropertyValue Property="TypeName" String="Project"/>
+                <PropertyValue Property="TypeNamePlural" String="Projects"/>
+                <PropertyValue Property="Title">
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Empid"/>
+                    </Record>
+                </PropertyValue>
+                <PropertyValue Property="Description">
+                    <Record Type="UI.DataField">
+                        <PropertyValue Property="Value" Path="Prjcode"/>
+                    </Record>
+                </PropertyValue>
+            </Record>
+        </Annotation>
+                <!-- /// creating facets      -->
+            <Annotation Term="UI.HeaderFacets" >
+                <Collection>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPClientname"/>
+                    </Record>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPPrjname"/>
+                    </Record>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPTeamsize"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+            <!-- // data point -->
+            <Annotation Term="UI.DataPoint" Qualifier="DPClientname">
+                <Record Type="UI.DataPointType">
+                    <PropertyValue Property="Value" Path="Clientname" />
+                    <PropertyValue Property="Title" String="Client Name"/>
+                </Record>
+            </Annotation>
+             <Annotation Term="UI.DataPoint" Qualifier="DPPrjname">
+                <Record Type="UI.DataPointType">
+                    <PropertyValue Property="Value" Path="Prjname" />
+                    <PropertyValue Property="Title" String="Project Name"/>
+                </Record>
+            </Annotation>
+             <Annotation Term="UI.DataPoint" Qualifier="DPTeamsize">
+                <Record Type="UI.DataPointType">
+                    <PropertyValue Property="Value" Path="Teamsize" />
+                    <PropertyValue Property="Title" String="Team Size"/>
+                </Record>
+            </Annotation>
+
+            <!-- // for field means like a table form it should be visilbe project data -->
+            <Annotation Term="UI.Facets" >
+                <Collection>
+                    <Record Type="UI.ReferenceFacet">
+                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGProjectInfo"/>
+                        <PropertyValue Property="Label" String="Project Information"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+            <Annotation Term="UI.FieldGroup" Qualifier="FGProjectInfo" >
+                <Record Type="UI.FieldGroupType">
+                    <PropertyValue Property="Data">
+                        <Collection>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Empid"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Clientname"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Prjcode"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Prjname"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Prjdesc"/>
+                            </Record>
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Teamsize"/>
+                            </Record>
+                        </Collection>
+                    </PropertyValue>
+                </Record>
+            </Annotation>
+
+
             <Annotation Term="UI.LineItem" Qualifier="LIProjects">
                 <Collection>
                     <Record Type="UI.DataField">
