@@ -97,11 +97,16 @@
                             <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPRating"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
+
+                        <!-- //this is to take decision in first page as well in footer section -->
+                    
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="ZF68FE_EMP_SRV.ZF68FE_EMP_SRV_Entities/UpdateEmpStatus"/>
+                            <PropertyValue Property="Label" String="Take Decison"/>
+                            <PropertyValue Property="Determining" Bool="true"/>
+                        </Record>
                         
-                         <!-- <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path=""/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
-                        </Record> -->
+                        
                     </Collection>
                 </Annotation>
            
@@ -127,15 +132,6 @@
             </Annotation>
             
             <!-- // this is for decision making so need function import function from backend -->
-            <Annotation Term="UI.Identification" >
-                <Collection>
-                    <Record Type="UI.DataFieldForAction">
-                        <PropertyValue Property="Action" String="ZF68FE_EMP_SRV.ZF68FE_EMP_SRV_Entities/UpdateEmpStatus"/>
-                        <PropertyValue Property="Label" String="Take Decision"/>
-                        <PropertyValue Property="Determining" Bool="true"/>
-                    </Record>
-                </Collection>
-            </Annotation>
 
 <!-- // this is for filter heading -->
             <Annotation Term="UI.SelectionFields">
@@ -301,6 +297,20 @@
                     </Record>
                 </Collection>
             </Annotation>
+              <!-- // this is for decision making so need function import function from backend -->
+            <Annotation Term="UI.Identification" >
+                <Collection>
+                    <Record Type="UI.DataFieldForAction">
+                        <PropertyValue Property="Action" String="ZF68FE_EMP_SRV.ZF68FE_EMP_SRV_Entities/UpdateEmpStatus"/>
+                        <PropertyValue Property="Label" String="Take Decision"/>
+                        <PropertyValue Property="Determining" Bool="true"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+
+
+
+
         </Annotations>
 
 <!-- // new annotation for project table     /////////////////////////////////////////////////////////////////////-->

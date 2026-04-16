@@ -289,4 +289,9 @@ when click on project then it will show the project data so we are add headerInf
                     </Record>
                 </Collection>
             </Annotation>    
-we defune button in second page object page to take decision                     
+we defune button in second page object page to take decision       
+
+///
+Internaliztion for separate page
+
+/////////////////////////////////////////////////////////////
