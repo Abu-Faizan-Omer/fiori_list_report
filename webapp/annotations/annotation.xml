@@ -122,6 +122,7 @@
                             <PropertyValue Property="Value" Path="Empid"/>
                         </Record>
                     </PropertyValue>
+                    <PropertyValue Property="TypeImageUrl" String="/sap/opu/odata/sap/ZF68FE_EMP_SRV/PhotoSet('{Empid}')/$value"/>
                 </Record>
             </Annotation>
 

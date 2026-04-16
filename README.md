@@ -152,7 +152,7 @@ create headerfacets with the help of guide
             </Annotation>
 
 /////
-now we are adding employee info so that we new annotaion field group acheive by guided
+now we are adding employee info so that we new annotaion [field group] acheive by guided
 it will add employee info and section part 
  <!-- <Annotation Term="UI.FieldGroup" Qualifier="FGEmpBasicInfo">
                 <Record Type="UI.FieldGroupType">
@@ -269,4 +269,9 @@ when click on project then it will show the project data so we are add headerInf
             </Record>
         </Annotation> -->
 
-        
+  --> Create a buton for upload photo by guide we can do it  selcet(Add a custom action to a page using extensions)
+   write a logic for upload image in controller and fragment to load the dialog box for upload image
+
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   

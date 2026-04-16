@@ -2,8 +2,9 @@ sap.ui.define([
     "sap/ui/model/Filter", 
     "sap/ui/comp/smartfilterbar/SmartFilterBar", 
     "sap/m/MultiComboBox",
-    "sap/m/MessageBox"
-], function (Filter, SmartFilterBar, MultiComboBox,MessageBox) {
+    "sap/m/MessageBox",
+    "sap/ui/unified/FileUploaderParameter"
+], function (Filter, SmartFilterBar, MultiComboBox,MessageBox,FileUploaderParameter) {
     "use strict";
     return {
         // THIS IS DYNAMICALLY DEFAULT VALUE
@@ -90,6 +91,7 @@ sap.ui.define([
                 }
             }
         },
+        // to send email notice
         sendNoticeToEmp: function(oEvent) {
             //MessageToast.show("Custom handler invoked.");
             var extensionAPI = this.extensionAPI //it is predefine method it grabs all the selected rows
@@ -103,6 +105,55 @@ sap.ui.define([
             var body = "Hi, \n we have notice your performance is not up to the mark.If you dont prove yourself there could be a chance of termination. \n thanks"
 
             sap.m.URLHelper.triggerEmail(toList,subject,body)
+        },
+        onPressUploadPhoto: function(oEvent) {
+           // MessageToast.show("Custom handler invoked.");
+           if(!this.dialog){
+            this.dialog = sap.ui.xmlfragment(this.getView().getId(),"com.listreport.zf68felrsegw.UploadPhoto",this)
+            this.getView().addDependent(this.dialog)
+           }
+           this.dialog.open()
+        },
+        onCloseDialog:function(){
+            this.dialog.close()
+        },
+        onFileSelect:function(oEvent){
+            this.fileName = oEvent.getParameter("files")[0].name
+            this.fileType = oEvent.getParameter("files")[0].type
+        },
+        onUploadComplete:function(oEvent){
+            var status =  oEvent.getParameter("status")
+            if(status === 201){
+                MessageBox.success("Employee Photo Upload Succussfully")
+                this.dialog.close()
+            }else{
+                MessageBox.error("OOps ! Failed to upload a photo")
+            }
+        },
+          uploadPhoto(){
+             var oFileUploader = this.getView().byId('idFileUploader')
+            var empId = this.extensionAPI.getSelectedContexts()[0].getProperty("Empid")
+            var slug = empId + "," + this.fileName
+ 
+            // oFileUploader.destroyHeaderParameters();
+            //1. add slug parameter
+            oFileUploader.addHeaderParameter(new FileUploaderParameter({
+                name: "slug",
+                value: slug
+            }))
+            //2 add the file types parameter
+            oFileUploader.addHeaderParameter(new FileUploaderParameter({
+                name: "Content-Type",
+                value: this.fileType
+            }))
+            //3. add X-CSRF token
+            this.getOwnerComponent().getModel().refreshSecurityToken();
+            oFileUploader.addHeaderParameter(new FileUploaderParameter({
+                name: "x-csrf-token",
+                value: this.getOwnerComponent().getModel().getHeaders()['x-csrf-token']
+            }))
+            oFileUploader.upload()
+ 
         }
     };
 });
