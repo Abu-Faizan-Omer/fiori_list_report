@@ -125,6 +125,17 @@
                     <PropertyValue Property="TypeImageUrl" String="/sap/opu/odata/sap/ZF68FE_EMP_SRV/PhotoSet('{Empid}')/$value"/>
                 </Record>
             </Annotation>
+            
+            <!-- // this is for decision making so need function import function from backend -->
+            <Annotation Term="UI.Identification" >
+                <Collection>
+                    <Record Type="UI.DataFieldForAction">
+                        <PropertyValue Property="Action" String="ZF68FE_EMP_SRV.ZF68FE_EMP_SRV_Entities/UpdateEmpStatus"/>
+                        <PropertyValue Property="Label" String="Take Decision"/>
+                        <PropertyValue Property="Determining" Bool="true"/>
+                    </Record>
+                </Collection>
+            </Annotation>
 
 <!-- // this is for filter heading -->
             <Annotation Term="UI.SelectionFields">

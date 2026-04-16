@@ -274,4 +274,19 @@ when click on project then it will show the project data so we are add headerInf
 
    ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-   
+                Video 10  
+  for decision making we have to create funtion import function so that we are defining in backend and activate and in dpc ext class search execute_action method write logic for that
+
+  FOR decision making use [identification annotation] 
+
+    <!-- // this is for decision making so need function import function from backend -->
+            <Annotation Term="UI.Identification" >
+                <Collection>
+                    <Record Type="UI.DataFieldForAction">
+                        <PropertyValue Property="Action" String="ZF68FE_EMP_SRV.ZF68FE_EMP_SRV_Entities/UpdateEmpStatus"/>
+                        <PropertyValue Property="Label" String="Take Decision"/>
+                        <PropertyValue Property="Determining" Bool="true"/>
+                    </Record>
+                </Collection>
+            </Annotation>    
+we defune button in second page object page to take decision                     
